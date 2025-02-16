@@ -1,6 +1,6 @@
 export interface Usuario {
     
-    id: number
+    idUsuario: number
     nome: string
     sobrenome: string
     cpf: string

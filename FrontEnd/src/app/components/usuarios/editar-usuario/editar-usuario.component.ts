@@ -25,7 +25,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditarUsuarioComponent implements OnInit {
 
   usuario: Usuario = {
-    id: 0,
+    idUsuario: 0,
     nome: '',
     sobrenome: '',
     email: '',
@@ -41,7 +41,7 @@ export class EditarUsuarioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'))
+    const id = Number(this.route.snapshot.paramMap.get('idUsuario'))
     console.log("Id Selecionado", id)
     this.usuarioService.buscarUsuarioPorId(id).subscribe((usuario) => {
       this.usuario = usuario;

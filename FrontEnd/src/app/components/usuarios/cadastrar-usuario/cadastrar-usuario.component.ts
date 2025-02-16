@@ -28,7 +28,7 @@ import { TemplateComponent } from "../../../shared/template/template.component";
 export class CadastrarUsuarioComponent implements OnInit{
   
   usuario: Usuario = {
-    id: 0,
+    idUsuario: 0,
     nome: '',
     sobrenome: '',
     email: '',

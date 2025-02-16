@@ -26,8 +26,8 @@ export const routes: Routes = [
    
    { path: 'cadastrar-usuario', component: CadastrarUsuarioComponent },
    { path: 'listar-usuarios', component: ListarUsuariosComponent },
-   { path: 'editar-usuario/:id', component: EditarUsuarioComponent },
-   { path: 'excluir-usuario/:id', component: ExcluirUsuarioComponent },
+   { path: 'editar-usuario/:idUsuario', component: EditarUsuarioComponent },
+   { path: 'excluir-usuario/:idUsuario', component: ExcluirUsuarioComponent },
    
    { path: 'cadastrar-projeto', component: CadastrarProjetoComponent },
    { path: 'listar-projetos', component: ListarProjetosComponent },

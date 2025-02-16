@@ -14,36 +14,36 @@ import { FormsModule } from '@angular/forms';
 })
 export class ExcluirUsuarioComponent {
 
-   usuario: Usuario = {
-        id: 0,
-        nome: '',
-        sobrenome: '',
-        email: '',
-        senha: '',
-        cpf: '',
-        dataNascimento: new Date()
-      };
-  
-      constructor(
-        private usuarioService: UsuarioService,
-        private router: Router,
-        private route: ActivatedRoute
-      ) {}
-  
-      ngOnInit(): void {
-        const id = this.route.snapshot.paramMap.get('id')
-        this.usuarioService.buscarUsuarioPorId(parseInt(id!)).subscribe((usuario) => {
-          this.usuario = usuario;
-          console.log("Usuario", id, "excluido")
-        });
-      }
+  usuario: Usuario = {
+    idUsuario: 0,
+    nome: '',
+    sobrenome: '',
+    email: '',
+    senha: '',
+    cpf: '',
+    dataNascimento: new Date()
+  };
 
-      excluir(){
-        if(this.usuario.id){
-          this.usuarioService.excluirUsuario(this.usuario.id).subscribe(() => {
-            alert("Usuario excluído com sucesso!")
-            this.router.navigate(['/listar-usuarios'])
-          })
-      }
+  constructor(
+    private usuarioService: UsuarioService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
+
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('idUsuario')
+    this.usuarioService.buscarUsuarioPorId(parseInt(id!)).subscribe((usuario) => {
+      this.usuario = usuario;
+      console.log("Usuario", id, "excluido")
+    });
+  }
+
+  excluir() {
+    if (this.usuario.idUsuario) {
+      this.usuarioService.excluirUsuario(this.usuario.idUsuario).subscribe(() => {
+        alert("Usuario excluído com sucesso!")
+        this.router.navigate(['/listar-usuarios'])
+      })
     }
+  }
 }

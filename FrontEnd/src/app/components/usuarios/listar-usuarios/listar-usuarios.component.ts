@@ -21,7 +21,7 @@ import { RouterModule } from '@angular/router';
 export class ListarUsuariosComponent implements OnInit{
   
   @Input() usuario: Usuario = {
-    id: 0,
+    idUsuario: 0,
     nome: '',
     sobrenome: '',
     email: '',
@@ -38,6 +38,7 @@ export class ListarUsuariosComponent implements OnInit{
   ngOnInit(): void {
     this.usuarioService.listarUsuarios().subscribe(dados => {
       this.usuarios = dados;
+      console.log("Usuarios Carregados!", this.usuarios)
     })
   }
 

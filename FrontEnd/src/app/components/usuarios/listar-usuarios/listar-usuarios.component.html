@@ -1,0 +1,63 @@
+<app-template>
+  <div class="mt-4">
+    <h2 class="text-center">Usuários</h2>
+      <div class="mb-2">
+        <button routerLink="/cadastrar-usuario" class="botao-global">
+          <mat-icon>add_circle</mat-icon>
+          <span class="ms-1">Cadastrar Usuário</span>
+        </button>
+      </div>
+      <mat-table #table [dataSource]="usuarios" matSort class="mat-elevation-z8">
+        <!-- Nome Column -->
+        <ng-container matColumnDef="nome">
+          <mat-header-cell *matHeaderCellDef class="bg-primary"> Nome </mat-header-cell>
+          <mat-cell *matCellDef="let usuario"> {{ usuario.nome }} </mat-cell>
+        </ng-container>
+
+        <!-- Sobrenome Column -->
+        <ng-container matColumnDef="sobrenome">
+          <mat-header-cell *matHeaderCellDef class="bg-primary"> Sobrenome </mat-header-cell>
+          <mat-cell *matCellDef="let usuario"> {{ usuario.sobrenome }} </mat-cell>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef class="bg-primary"> Email </mat-header-cell>
+          <mat-cell *matCellDef="let usuario"> {{ usuario.email }} </mat-cell>
+        </ng-container>
+
+        <!-- CPF Column -->
+        <ng-container matColumnDef="cpf">
+          <mat-header-cell *matHeaderCellDef class="bg-primary"> CPF </mat-header-cell>
+          <mat-cell *matCellDef="let usuario"> {{ usuario.cpf }} </mat-cell>
+        </ng-container>
+
+        <!-- Data de Nascimento Column -->
+        <ng-container matColumnDef="dataNascimento">
+          <mat-header-cell *matHeaderCellDef class="bg-primary"> Data de Nascimento </mat-header-cell>
+          <mat-cell *matCellDef="let usuario"> {{ usuario.dataNascimento | date:'dd/MM/yyyy' }} </mat-cell>
+        </ng-container>
+
+        <!-- Ações Column -->
+        <ng-container matColumnDef="acoes">
+          <mat-header-cell *matHeaderCellDef class="bg-primary"> Ações </mat-header-cell>
+          <mat-cell *matCellDef="let usuario">
+            <div class="d-flex gap-2">
+              <button mat-icon-button class="botao-editar" [routerLink]="['/editar-usuario/', usuario.id ]">
+                <mat-icon>edit</mat-icon>
+                Editar
+              </button>
+              <button mat-icon-button class="botao-excluir" routerLink="/excluir-usuario/{{ usuario.id }}">
+                <mat-icon>delete</mat-icon>
+                Excluir
+              </button>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <!-- Header and Row Definitions -->
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+</app-template>

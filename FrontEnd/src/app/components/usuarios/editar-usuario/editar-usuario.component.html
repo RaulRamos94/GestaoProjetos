@@ -1,0 +1,48 @@
+<app-template>
+    <div>
+    <div class="d-flex justify-content-center">
+      <form class="d-grid justify-content-center">
+        <h4 class="p-2">Editar Usuário</h4>
+        <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <mat-icon matPrefix>person</mat-icon>
+          <input matInput [(ngModel)]="usuario.nome" name="nome" id="nome">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Sobrenome</mat-label>
+          <mat-icon matPrefix>group</mat-icon>
+          <input matInput [(ngModel)]="usuario.sobrenome" name="sobrenome" id="sobrenome">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>CPF</mat-label>
+          <mat-icon matPrefix>badge</mat-icon>
+          <input matInput [(ngModel)]="usuario.cpf" name="cpf">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput [matDatepicker]="dataNascimento" placeholder="DD/MM/YYYY" [(ngModel)]="usuario.dataNascimento" name="dataNascimento" id="dataNascimento">
+          <mat-datepicker-toggle matIconPrefix [for]="dataNascimento"></mat-datepicker-toggle>
+          <mat-datepicker #dataNascimento></mat-datepicker>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>E-Mail</mat-label>
+          <mat-icon matPrefix>mail</mat-icon>
+          <input matInput [(ngModel)]="usuario.email" name="email" id="email">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input matInput [(ngModel)]="usuario.senha" type="password" name="senha" id="senha">
+        </mat-form-field>
+        <div>
+          <button mat-raised-button type="button" (click)="editar()">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </app-template>

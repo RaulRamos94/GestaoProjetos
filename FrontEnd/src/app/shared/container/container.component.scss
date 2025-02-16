@@ -1,0 +1,29 @@
+.conteudo{
+    justify-content: center;
+    align-items: center;
+    background: #cccccf;
+    height: 100%;
+    width: 80%;
+    position: absolute;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
+mat-toolbar{
+    justify-content: space-between;
+    background-color: #349055;
+}
+
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+}

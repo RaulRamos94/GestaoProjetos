@@ -1,0 +1,36 @@
+mat-table{
+    border: 4px black solid;
+    width: 120ch;
+}
+
+mat-header-cell{
+    color: white;
+    font-size: 15px;
+}
+
+.botao-editar, .botao-excluir{
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    border-radius: 40px;
+    gap: 2px;
+    color: white;
+    border: none;
+    text-decoration: none;
+}
+
+.botao-editar{
+    background-color: rgb(38, 170, 63);
+} 
+
+.botao-editar:hover{
+    background-color: rgb(8, 113, 29);
+} 
+
+.botao-excluir{
+    background-color: rgb(191, 46, 46);
+}
+
+.botao-excluir:hover{
+    background-color: rgb(114, 9, 9);
+}

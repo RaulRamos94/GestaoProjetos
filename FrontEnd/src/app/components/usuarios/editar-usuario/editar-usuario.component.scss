@@ -1,0 +1,26 @@
+form {
+    background-color: white; /* Fundo do formulário */
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px; /* Largura fixa do formulário */
+    text-align: center;
+    border: 4px coral solid;
+    border-radius: 30px;
+  }
+  mat-form-field{
+    width: 310px;
+  }
+
+  button{
+    background-color: rgb(5, 226, 35);
+    color: aliceblue;
+    width: 40%;
+  }
+
+  button:hover{
+    color: aliceblue;
+    background-color: rgb(5, 226, 35);
+    transform: translateY(-2px); /* Levanta o botão */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra mais destacada */
+  }
+
